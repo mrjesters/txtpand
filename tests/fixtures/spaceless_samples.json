@@ -1,0 +1,22 @@
+[
+  {"input": "helloworld", "expected_contains": ["hello", "world"]},
+  {"input": "thankyou", "expected_contains": ["thank", "you"]},
+  {"input": "canyouhelp", "expected_contains": ["can", "you", "help"]},
+  {"input": "goodmorning", "expected_contains": ["good", "morning"]},
+  {"input": "iamhere", "expected_contains": ["i", "am", "here"]},
+  {"input": "whatisthis", "expected_contains": ["what", "is", "this"]},
+  {"input": "letmesee", "expected_contains": ["let", "me", "see"]},
+  {"input": "helpme", "expected_contains": ["help", "me"]},
+  {"input": "noproblem", "expected_contains": ["no", "problem"]},
+  {"input": "comehere", "expected_contains": ["come", "here"]},
+  {"input": "goback", "expected_contains": ["go", "back"]},
+  {"input": "takecare", "expected_contains": ["take", "care"]},
+  {"input": "findout", "expected_contains": ["find", "out"]},
+  {"input": "workon", "expected_contains": ["work", "on"]},
+  {"input": "lookfor", "expected_contains": ["look", "for"]},
+  {"input": "giveme", "expected_contains": ["give", "me"]},
+  {"input": "tellyou", "expected_contains": ["tell", "you"]},
+  {"input": "isitready", "expected_contains": ["is", "it", "ready"]},
+  {"input": "theyleft", "expected_contains": ["they", "left"]},
+  {"input": "itworks", "expected_contains": ["it", "work"]}
+]

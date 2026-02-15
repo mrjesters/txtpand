@@ -1,0 +1,63 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "txtpand"
+version = "0.1.0"
+description = "Shorthand text expansion library — type less, say more."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "txtpand contributors" }]
+keywords = ["text-expansion", "abbreviation", "shorthand", "nlp"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Text Processing :: Linguistic",
+]
+dependencies = []
+
+[project.optional-dependencies]
+fast = ["rapidfuzz>=3.0"]
+openai = ["openai>=1.0"]
+anthropic = ["anthropic>=0.20"]
+all = ["rapidfuzz>=3.0", "openai>=1.0", "anthropic>=0.20"]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.4",
+    "mypy>=1.0",
+]
+
+[project.scripts]
+txtpand = "txtpand.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/txtpand/txtpand"
+Repository = "https://github.com/txtpand/txtpand"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/txtpand"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
