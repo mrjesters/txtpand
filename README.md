@@ -227,4 +227,4 @@ mypy src/txtpand/
 
 ## License
 
-MIT
+Apache 2.0
