@@ -1,7 +1,7 @@
 """Tests for the scorer."""
 
-from txtpand.core.scorer import Scorer
 from txtpand.config import TxtpandConfig
+from txtpand.core.scorer import Scorer
 from txtpand.types import MatchTier, ScoredCandidate
 
 

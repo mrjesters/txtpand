@@ -140,7 +140,10 @@ def _cmd_expand(args: argparse.Namespace) -> None:
             if tr.llm_resolved:
                 flag = " [LLM]"
             if tr.original != tr.expanded:
-                print(f"  {tr.original!r} → {tr.expanded!r} ({tr.tier.value}, {tr.confidence:.2f}){flag}")
+                print(
+                    f"  {tr.original!r} → {tr.expanded!r}"
+                    f" ({tr.tier.value}, {tr.confidence:.2f}){flag}"
+                )
             else:
                 print(f"  {tr.original!r} (passthrough)")
     else:
@@ -169,7 +172,7 @@ def _cmd_config(args: argparse.Namespace) -> None:
     if args.init:
         path = init_config_file()
         print(f"Config file created at: {path}")
-        print(f"Edit it to add your API key and enable LLM polish.")
+        print("Edit it to add your API key and enable LLM polish.")
         return
 
     # Show current config
@@ -179,7 +182,12 @@ def _cmd_config(args: argparse.Namespace) -> None:
     if config.llm.enabled:
         print(f"  Provider:     {config.llm.provider}")
         print(f"  Model:        {config.llm.model}")
-        print(f"  API key:      {'***' + config.llm.api_key[-4:] if config.llm.api_key and len(config.llm.api_key) > 4 else '(not set)'}")
+        key_display = (
+            "***" + config.llm.api_key[-4:]
+            if config.llm.api_key and len(config.llm.api_key) > 4
+            else "(not set)"
+        )
+        print(f"  API key:      {key_display}")
         print(f"  Timeout:      {config.llm.timeout}s")
     else:
         print("  (set OPENAI_API_KEY or run 'txtpand config --init' to enable)")

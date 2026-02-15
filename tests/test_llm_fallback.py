@@ -2,6 +2,11 @@
 
 from unittest.mock import MagicMock
 
+import pytest
+
+from txtpand.config import TxtpandConfig
+from txtpand.core.expander import Expander
+from txtpand.exceptions import LLMFallbackError
 from txtpand.llm.fallback import LLMFallback
 from txtpand.llm.prompt import (
     DISAMBIGUATION_SYSTEM,
@@ -11,11 +16,6 @@ from txtpand.llm.prompt import (
 )
 from txtpand.llm.providers import LLMProvider
 from txtpand.types import MatchTier, ScoredCandidate, TokenResult
-from txtpand.config import TxtpandConfig
-from txtpand.core.expander import Expander
-from txtpand.exceptions import LLMFallbackError
-
-import pytest
 
 
 class MockProvider(LLMProvider):

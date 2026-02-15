@@ -15,7 +15,6 @@ Usage:
 
 from __future__ import annotations
 
-import platform
 import shutil
 import subprocess
 import sys
@@ -130,7 +129,10 @@ def run_clip(
 
 def _run_watch_mode(expander, spaceless: bool) -> None:
     """Interactive watch mode: type → enter → expanded + copied."""
-    print("txtpand clip watch — type text, press enter to expand + copy. Ctrl+C to quit.", file=sys.stderr)
+    print(
+        "txtpand clip watch — type text, press enter to expand + copy. Ctrl+C to quit.",
+        file=sys.stderr,
+    )
     if expander.config.llm_enabled:
         print("LLM polish: enabled", file=sys.stderr)
     print(file=sys.stderr)

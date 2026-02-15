@@ -1,10 +1,10 @@
 """Tests for middleware proxies (mocked SDK clients)."""
 
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock
 
-from txtpand.middleware.openai import wrap_openai, _expand_messages
-from txtpand.middleware.anthropic import wrap_anthropic
 from txtpand.core.expander import Expander
+from txtpand.middleware.anthropic import wrap_anthropic
+from txtpand.middleware.openai import _expand_messages, wrap_openai
 
 
 class TestOpenAIMiddleware:
@@ -33,7 +33,7 @@ class TestOpenAIMiddleware:
 
         wrapped = wrap_openai(mock_client)
 
-        result = wrapped.chat.completions.create(
+        wrapped.chat.completions.create(
             model="gpt-4o-mini",
             messages=[{"role": "user", "content": "hel me"}],
         )
@@ -88,7 +88,7 @@ class TestAnthropicMiddleware:
 
         wrapped = wrap_anthropic(mock_client)
 
-        result = wrapped.messages.create(
+        wrapped.messages.create(
             model="claude-haiku-4-5-20251001",
             messages=[{"role": "user", "content": "hel me"}],
             max_tokens=1024,

@@ -5,8 +5,8 @@ from __future__ import annotations
 import pytest
 
 from txtpand.config import TxtpandConfig
-from txtpand.core.matcher import Matcher
 from txtpand.core.context import ContextResolver
+from txtpand.core.matcher import Matcher
 from txtpand.core.scorer import Scorer
 
 

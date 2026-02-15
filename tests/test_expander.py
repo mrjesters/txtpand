@@ -1,8 +1,8 @@
 """Integration tests for the expander."""
 
 import txtpand
-from txtpand.core.expander import Expander
 from txtpand.config import TxtpandConfig
+from txtpand.core.expander import Expander
 
 
 class TestExpander:

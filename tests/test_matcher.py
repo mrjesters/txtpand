@@ -1,7 +1,7 @@
 """Tests for the matcher."""
 
-from txtpand.core.matcher import Matcher
 from txtpand.config import TxtpandConfig
+from txtpand.core.matcher import Matcher
 from txtpand.types import MatchTier
 
 

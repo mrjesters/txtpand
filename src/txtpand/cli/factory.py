@@ -47,7 +47,10 @@ def _build_llm_fallback(user_config: UserConfig):
                 timeout=user_config.llm.timeout,
             )
         except ImportError:
-            print("txtpand: openai package not installed. Run: pip install txtpand[openai]", file=sys.stderr)
+            print(
+                "txtpand: openai package not installed. Run: pip install txtpand[openai]",
+                file=sys.stderr,
+            )
             return None
 
     elif provider == "anthropic":
@@ -62,9 +65,17 @@ def _build_llm_fallback(user_config: UserConfig):
                 timeout=user_config.llm.timeout,
             )
         except ImportError:
-            print("txtpand: anthropic package not installed. Run: pip install txtpand[anthropic]", file=sys.stderr)
+            print(
+                "txtpand: anthropic package not installed."
+                " Run: pip install txtpand[anthropic]",
+                file=sys.stderr,
+            )
             return None
 
     else:
-        print(f"txtpand: unknown LLM provider '{provider}'. Use 'openai' or 'anthropic'.", file=sys.stderr)
+        print(
+            f"txtpand: unknown LLM provider '{provider}'."
+            " Use 'openai' or 'anthropic'.",
+            file=sys.stderr,
+        )
         return None

@@ -6,7 +6,6 @@ Handles both full words ("thequickbrown") and abbreviated fragments ("thqckbrwn"
 
 from __future__ import annotations
 
-import math
 from dataclasses import dataclass
 
 from txtpand.config import TxtpandConfig

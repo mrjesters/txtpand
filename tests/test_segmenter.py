@@ -1,7 +1,6 @@
 """Tests for the spaceless mode segmenter."""
 
 from txtpand.core.segmenter import Segmenter
-from txtpand.config import TxtpandConfig
 
 
 class TestSegmenter:
