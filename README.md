@@ -2,7 +2,7 @@
 
 > *"Type less. Say more."*
 
-Shorthand text expansion library for Python. Expands abbreviated text into full English — enabling faster interaction with AI and messaging.
+Shorthand text expansion library for Python. Expands abbreviated text into full English, enabling faster interaction with AI and messaging.
 
 ```python
 import txtpand
